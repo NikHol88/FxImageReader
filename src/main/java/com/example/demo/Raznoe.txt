@@ -1,0 +1,103 @@
+   /* img1 = ImageIO.read(new ByteArrayInputStream(img));
+
+        File output = new File("D:\\INI\\New_Project2\\ImageToFile\\src\\main\\resources\\Сев"+i+".jpg");
+        ImageIO.write(img1, "jpg", output);
+         image = img1.getSubimage(0,0,50,100);
+*/
+
+
+
+//InputStream pict = new ByteArrayInputStream(docReader.docReader(chek));
+      //  Image card =new Image(pict);
+
+       // ImageView imageView = new ImageView(card);
+
+       // flowPane.getChildren().add(imageView);
+
+
+
+
+
+       button.setOnAction(e -> {
+                           Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+                           InputStream pict = null;
+                           try {
+                               pict = new ByteArrayInputStream(docReader.docReader(chek));
+                           } catch (IOException ex) {
+                               ex.printStackTrace();
+                           }
+                           Image card =new Image(pict);
+
+                           ImageView imageView = new ImageView(card);
+
+                           alert.setGraphic(imageView);
+
+                           chek++;
+                           System.out.println(chek);
+                           alert.showAndWait();
+                       });
+
+
+    byte[] img = new byte[0];
+            try {
+                img = docReader.docReader().get(chek-1).getData();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+         /*   BufferedImage img1 = null;
+            System.out.println(img1);
+            try {
+                img1 = ImageIO.read(new ByteArrayInputStream(img));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
+            InputStream pict = null;
+            pict = new ByteArrayInputStream(img);
+
+
+
+
+             RenderedImage img1=null;
+                        try {
+                          img1= ImageIO.read(pict);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        String name = ((Button)actionEvent.getSource()).getText();
+                        File output = new File("D:\\INI\\New_Project2\\demo\\src\\main\\resources\\"+name+".jpg");
+                        try {
+            System.out.println(img1);
+
+                          System.out.println(ImageIO.write(img1, "jpg", output));
+
+
+
+                            /*  card= new Image(pict);
+                                      imageView.setFitHeight(500);
+                                      imageView.setFitWidth(250);
+                                      imageView.setImage(card);
+
+                                      chek++;
+                                      bool=false;
+                                      System.out.println(chek);
+                                      try {
+                                          pict.close();
+                                         // textArea.setText("ready");
+                                      } catch (IOException e) {
+                                          e.printStackTrace();
+                                      }*/
+                                    //  String name = ((Button)actionEvent.getSource()).getText();
+                                   //   DoubleThread doubleThread = new DoubleThread(pict,name);
+                                    //  doubleThread.run();
+
+
+
+
+                                          InputStream pict = null;
+                                                    try {
+                                                        pict = new ByteArrayInputStream(docReader.docReader().get(chek).getData());
+                                                    } catch (IOException ex) {
+                                                        ex.printStackTrace();
+                                                    }
