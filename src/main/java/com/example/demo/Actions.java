@@ -87,7 +87,7 @@ imageView.setFitWidth(250);
 //запись
             String name = ((Button)actionEvent.getSource()).getText();
             try {
-                Files.write( Path.of("D:\\INI\\New_Project2\\FxImageReader\\src\\main\\resources\\"+name+".jpg"),
+                Files.write( Path.of("D:\\INI\\New_Project2\\demo\\src\\main\\resources\\"+name+".jpg"),
                         docReader.docReader().get(chek-1).getData());
             } catch (IOException e) {
                 e.printStackTrace();
@@ -95,7 +95,7 @@ imageView.setFitWidth(250);
 
 
 //проверка
-               File nef = new File("D:\\INI\\New_Project2\\FxImageReader\\src\\main\\resources\\"+name+".jpg");
+               File nef = new File("D:\\INI\\New_Project2\\demo\\src\\main\\resources\\"+name+".jpg");
                 textArea.setText("Ok\n"+nef.exists());
 
 

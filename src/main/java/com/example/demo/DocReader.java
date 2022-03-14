@@ -20,7 +20,7 @@ public class DocReader {
     BufferedImage img1;
     public  List<XWPFPictureData> docReader() throws IOException {
 
-        File file = new File("D:\\INI\\New_Project2\\FxImageReader\\src\\main\\resources\\Чудовища.docx");
+        File file = new File("D:\\INI\\New_Project2\\demo\\src\\main\\resources\\Чудовища.docx");
         FileInputStream fileInputStream = new FileInputStream(file);
              XWPFDocument xwpfDocument = new XWPFDocument(fileInputStream);
 
